@@ -1,0 +1,318 @@
+/* ═══════════════════════════════════════════
+   COUNSELOR STUDENT DETAIL — Premium
+   ═══════════════════════════════════════════ */
+
+/* ===== فرم افزودن برنامه ===== */
+.plan-form-card {
+  background: linear-gradient(135deg, #FFFFFF, #F5F3FF, #FDF2F8);
+  border: 2px solid rgba(139, 92, 246, 0.15);
+  border-radius: 22px;
+  padding: 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .plan-form-card {
+  background: linear-gradient(135deg, #0C2344, #2D1B4E, #1A1A3E);
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+/* نوار گرادیان بالا */
+.plan-form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8B5CF6, #EC4899, #F59E0B);
+}
+
+/* ===== فیلدهای فرم ===== */
+.plan-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.plan-form-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dark .plan-form-label {
+  color: #94A3B8;
+}
+
+.plan-form-label-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 11px;
+}
+
+.plan-form-label-icon-purple {
+  background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+}
+
+.plan-form-label-icon-blue {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+}
+
+.plan-form-label-icon-green {
+  background: linear-gradient(135deg, #10B981, #34D399);
+}
+
+.plan-form-label-icon-orange {
+  background: linear-gradient(135deg, #F59E0B, #FBBF24);
+}
+
+/* اینپوت‌ها */
+.plan-form-input,
+.plan-form-select {
+  height: 48px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(148, 163, 184, 0.2);
+  border-radius: 14px;
+  font-size: 13px;
+  color: #0F172A;
+  outline: none;
+  font-family: 'Vazirmatn', sans-serif;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.dark .plan-form-input,
+.dark .plan-form-select {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #E2E8F0;
+}
+
+.plan-form-input:focus,
+.plan-form-select:focus {
+  border-color: #8B5CF6;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.plan-form-select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+  padding-left: 40px;
+}
+
+/* دکمه ثبت */
+.plan-form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #8B5CF6, #6366F1);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'Vazirmatn', sans-serif;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.35);
+  transition: all 0.3s ease;
+}
+
+.plan-form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.45);
+}
+
+/* دکمه افزودن برنامه */
+.plan-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #8B5CF6, #6366F1);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'Vazirmatn', sans-serif;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.plan-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+}
+
+/* ===== فیلترها ===== */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(148, 163, 184, 0.12);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.dark .filter-bar {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.filter-search {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+}
+
+.filter-search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #94A3B8;
+}
+
+.filter-search-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 38px 0 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  font-size: 13px;
+  outline: none;
+  font-family: 'Vazirmatn', sans-serif;
+  transition: all 0.25s ease;
+}
+
+.dark .filter-search-input {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+}
+
+.filter-select {
+  height: 44px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  font-size: 13px;
+  outline: none;
+  font-family: 'Vazirmatn', sans-serif;
+  cursor: pointer;
+}
+
+.dark .filter-select {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+}
+
+.filter-date {
+  height: 44px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  font-size: 12px;
+  outline: none;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.dark .filter-date {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+}
+
+/* ===== فرم تماس ===== */
+.contact-form-card {
+  background: linear-gradient(135deg, #ECFDF5, #FFFFFF);
+  border: 2px solid rgba(16, 185, 129, 0.15);
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.dark .contact-form-card {
+  background: linear-gradient(135deg, #0F2A1F, #0C2344);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.contact-form-select {
+  height: 46px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(16, 185, 129, 0.15);
+  border-radius: 13px;
+  font-size: 13px;
+  font-family: 'Vazirmatn', sans-serif;
+  cursor: pointer;
+}
+
+.dark .contact-form-select {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: #E2E8F0;
+}
+
+.contact-form-input {
+  flex: 1;
+  height: 46px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(16, 185, 129, 0.15);
+  border-radius: 13px;
+  font-size: 13px;
+  font-family: 'Vazirmatn', sans-serif;
+  outline: none;
+}
+
+.dark .contact-form-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: #E2E8F0;
+}
+
+.contact-form-submit {
+  height: 46px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'Vazirmatn', sans-serif;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.contact-form-submit:hover {
+  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.4);
+}
