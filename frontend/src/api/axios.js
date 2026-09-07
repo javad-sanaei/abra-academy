@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://abra-backend.onrender.com/api',
+  baseURL: ,
 })
 
 // اضافه کردن Token به همه درخواست‌ها
@@ -25,10 +25,10 @@ api.interceptors.response.use(
       const refresh = localStorage.getItem('refresh')
       if (refresh) {
         try {
-          const res = await axios.post(
-            'https://abra-backend.onrender.com/api/accounts/token/refresh/',
-            { refresh }
-          )
+          // رفرش توکن با endpoint درست
+          const res = await axios.post('/api/accounts/token/refresh/', {
+            refresh: refresh,
+          })
           
           if (res.data && res.data.access) {
             localStorage.setItem('access', res.data.access)
@@ -40,6 +40,7 @@ api.interceptors.response.use(
         }
       }
       
+      // اگه refresh نشد، کاربر رو به login بفرست
       localStorage.clear()
       window.location.href = '/login'
     }
