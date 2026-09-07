@@ -5,7 +5,7 @@ import {
   Eye, EyeOff, LogIn, User, Lock, 
   AlertCircle, Moon, Sun
 } from 'lucide-react'
-import axios from 'axios'
+import api from '../api/axios'
 import '../styles/login.css'
 
 const LoginPage = () => {
@@ -29,7 +29,7 @@ const LoginPage = () => {
     setLoading(true)
 
     try {
-      const response = await axios.post('/api/accounts/login/', {
+      const response = await api.post('/accounts/login/', {
         username: username.trim(),
         password
       })
